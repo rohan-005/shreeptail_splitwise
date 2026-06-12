@@ -9,8 +9,8 @@ const groupSchema = new mongoose.Schema(
     },
     category: {
       type: String,
-      enum: ['Home', 'Trip', 'Couple', 'Other'],
-      default: 'Other',
+      enum: ['home', 'trip', 'couple', 'other'],
+      default: 'other',
     },
     createdBy: {
       type: mongoose.Schema.Types.ObjectId,

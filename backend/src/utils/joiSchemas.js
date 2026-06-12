@@ -36,7 +36,7 @@ export const createGroupSchema = Joi.object({
   name: Joi.string().min(2).max(100).required().messages({
     'string.empty': 'Group name cannot be empty',
   }),
-  category: Joi.string().valid('Home', 'Trip', 'Couple', 'Other').default('Other'),
+  category: Joi.string().valid('home', 'trip', 'couple', 'other').default('other'),
 });
 
 export const addMemberSchema = Joi.object({
