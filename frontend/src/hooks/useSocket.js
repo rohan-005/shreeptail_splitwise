@@ -5,7 +5,7 @@ export const useSocket = () => {
   const socketRef = useRef(null);
 
   useEffect(() => {
-    const socketUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+    const socketUrl = import.meta.env.VITE_API_URL || 'https://shreeptail-splitwise.onrender.com';
     
     // Connect to Socket.io server
     socketRef.current = io(socketUrl, {
