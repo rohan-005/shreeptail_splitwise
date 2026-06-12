@@ -309,7 +309,7 @@ const GroupDetails = () => {
       <div className="border border-brand-charcoal-light bg-brand-charcoal-medium p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
         <div>
           <div className="flex items-center space-x-3">
-            <h1 className="text-3xl font-black uppercase tracking-wider text-white">
+            <h1 className="text-3xl font-black uppercase tracking-wider text-gray-900">
               {group.name}
             </h1>
             <span className="text-xs uppercase bg-brand-charcoal-dark border border-brand-charcoal-light text-gray-400 px-3 py-1 font-bold">
@@ -362,7 +362,7 @@ const GroupDetails = () => {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
         {/* Left: Expenses Activity */}
         <div className="lg:col-span-7 space-y-4">
-          <h2 className="text-lg font-bold uppercase tracking-wider text-white border-b border-brand-charcoal-light pb-2">
+          <h2 className="text-lg font-bold uppercase tracking-wider text-gray-900 border-b border-brand-charcoal-light pb-2">
             Expenses log
           </h2>
 
@@ -379,10 +379,10 @@ const GroupDetails = () => {
                   className="p-4 bg-brand-charcoal-medium border border-brand-charcoal-light hover:border-brand-orange transition-colors cursor-pointer flex items-center justify-between"
                 >
                   <div className="space-y-1">
-                    <span className="font-bold text-sm text-gray-200">{exp.description}</span>
+                    <span className="font-bold text-sm text-gray-800">{exp.description}</span>
                     <p className="text-xs text-gray-400">
                       Paid by{' '}
-                      <strong className="text-gray-300">
+                      <strong className="text-gray-700">
                         {exp.paidBy?._id === user?._id ? 'You' : exp.paidBy?.name}
                       </strong>{' '}
                       • {new Date(exp.createdAt).toLocaleDateString()}
@@ -407,7 +407,7 @@ const GroupDetails = () => {
         <div className="lg:col-span-5 space-y-8">
           {/* Debts Balances */}
           <div className="space-y-4">
-            <h2 className="text-lg font-bold uppercase tracking-wider text-white border-b border-brand-charcoal-light pb-2">
+            <h2 className="text-lg font-bold uppercase tracking-wider text-gray-900 border-b border-brand-charcoal-light pb-2">
               Group balances
             </h2>
 
@@ -420,11 +420,11 @@ const GroupDetails = () => {
                 {debts.map((d, index) => (
                   <div key={index} className="p-4 flex justify-between items-center text-sm">
                     <div>
-                      <span className="font-bold text-gray-200">
+                      <span className="font-bold text-gray-800">
                         {d.fromUser._id === user?._id ? 'You' : d.fromUser.name}
                       </span>{' '}
                       owes{' '}
-                      <span className="font-bold text-gray-200">
+                      <span className="font-bold text-gray-800">
                         {d.toUser._id === user?._id ? 'You' : d.toUser.name}
                       </span>
                     </div>
@@ -439,7 +439,7 @@ const GroupDetails = () => {
 
           {/* Members list */}
           <div className="space-y-4">
-            <h2 className="text-lg font-bold uppercase tracking-wider text-white border-b border-brand-charcoal-light pb-2">
+            <h2 className="text-lg font-bold uppercase tracking-wider text-gray-900 border-b border-brand-charcoal-light pb-2">
               Group Members
             </h2>
 
@@ -453,7 +453,7 @@ const GroupDetails = () => {
                       className="w-6 h-6 border border-brand-charcoal-light bg-brand-charcoal-dark p-0.5"
                     />
                     <div>
-                      <p className="text-sm font-semibold text-gray-200">{m.userId.name}</p>
+                      <p className="text-sm font-semibold text-gray-800">{m.userId.name}</p>
                       <p className="text-[10px] text-gray-400">{m.userId.email}</p>
                     </div>
                   </div>
@@ -483,7 +483,7 @@ const GroupDetails = () => {
                   required
                   value={memberEmail}
                   onChange={(e) => setMemberEmail(e.target.value)}
-                  className="flex-1 bg-brand-charcoal-dark border border-brand-charcoal-light focus:border-brand-orange text-white text-xs px-3 py-2 outline-none"
+                  className="flex-1 bg-brand-charcoal-dark border border-brand-charcoal-light focus:border-brand-orange text-gray-800 text-xs px-3 py-2 outline-none"
                   placeholder="e.g. member@email.com"
                 />
                 <button
@@ -503,7 +503,7 @@ const GroupDetails = () => {
       {showExpenseModal && (
         <div className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center p-4 overflow-y-auto">
           <div className="bg-brand-charcoal-medium border border-brand-charcoal-light p-6 w-full max-w-lg my-8">
-            <h3 className="text-lg font-black uppercase tracking-wider text-white mb-4 border-b border-brand-charcoal-light pb-2">
+            <h3 className="text-lg font-black uppercase tracking-wider text-gray-900 mb-4 border-b border-brand-charcoal-light pb-2">
               Add an Expense
             </h3>
 
@@ -524,7 +524,7 @@ const GroupDetails = () => {
                     required
                     value={expDescription}
                     onChange={(e) => setExpDescription(e.target.value)}
-                    className="w-full bg-brand-charcoal-dark border border-brand-charcoal-light focus:border-brand-orange text-white px-4 py-2 outline-none text-sm"
+                    className="w-full bg-brand-charcoal-dark border border-brand-charcoal-light focus:border-brand-orange text-gray-800 px-4 py-2 outline-none text-sm"
                     placeholder="e.g. Dinner party"
                   />
                 </div>
@@ -539,7 +539,7 @@ const GroupDetails = () => {
                     required
                     value={expAmount}
                     onChange={(e) => setExpAmount(e.target.value)}
-                    className="w-full bg-brand-charcoal-dark border border-brand-charcoal-light focus:border-brand-orange text-white px-4 py-2 outline-none text-sm"
+                    className="w-full bg-brand-charcoal-dark border border-brand-charcoal-light focus:border-brand-orange text-gray-800 px-4 py-2 outline-none text-sm"
                     placeholder="0.00"
                   />
                 </div>
@@ -553,7 +553,7 @@ const GroupDetails = () => {
                   <select
                     value={expPaidBy}
                     onChange={(e) => setExpPaidBy(e.target.value)}
-                    className="w-full bg-brand-charcoal-dark border border-brand-charcoal-light focus:border-brand-orange text-white px-4 py-2 outline-none text-sm"
+                    className="w-full bg-brand-charcoal-dark border border-brand-charcoal-light focus:border-brand-orange text-gray-800 px-4 py-2 outline-none text-sm"
                   >
                     {members.map((m) => (
                       <option key={m.userId._id} value={m.userId._id}>
@@ -570,7 +570,7 @@ const GroupDetails = () => {
                   <select
                     value={expSplitType}
                     onChange={(e) => setExpSplitType(e.target.value)}
-                    className="w-full bg-brand-charcoal-dark border border-brand-charcoal-light focus:border-brand-orange text-white px-4 py-2 outline-none text-sm"
+                    className="w-full bg-brand-charcoal-dark border border-brand-charcoal-light focus:border-brand-orange text-gray-800 px-4 py-2 outline-none text-sm"
                   >
                     <option value="equal">Equally</option>
                     <option value="unequal">Unequally (Exact amounts)</option>
@@ -593,7 +593,7 @@ const GroupDetails = () => {
 
                     return (
                       <div key={uid} className="flex items-center justify-between text-xs">
-                        <label className="flex items-center space-x-2 text-gray-300 font-semibold cursor-pointer">
+                        <label className="flex items-center space-x-2 text-gray-700 font-semibold cursor-pointer">
                           <input
                             type="checkbox"
                             checked={splitState.checked}
@@ -612,7 +612,7 @@ const GroupDetails = () => {
                               required
                               value={splitState.value}
                               onChange={(e) => handleSplitValueChange(uid, e.target.value)}
-                              className="w-20 bg-brand-charcoal-medium border border-brand-charcoal-light focus:border-brand-orange text-white px-2 py-1 outline-none text-center"
+                              className="w-20 bg-brand-charcoal-medium border border-brand-charcoal-light focus:border-brand-orange text-gray-800 px-2 py-1 outline-none text-center"
                               placeholder={
                                 expSplitType === 'unequal' ? '₹' : expSplitType === 'percentage' ? '%' : 'shares'
                               }
@@ -653,7 +653,7 @@ const GroupDetails = () => {
       {showSettleModal && (
         <div className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center p-4">
           <div className="bg-brand-charcoal-medium border border-brand-charcoal-light p-6 w-full max-w-md">
-            <h3 className="text-lg font-black uppercase tracking-wider text-white mb-4 border-b border-brand-charcoal-light pb-2">
+            <h3 className="text-lg font-black uppercase tracking-wider text-gray-900 mb-4 border-b border-brand-charcoal-light pb-2">
               Settle Balance (Record Payment)
             </h3>
 
@@ -672,7 +672,7 @@ const GroupDetails = () => {
                   required
                   value={settleToUser}
                   onChange={(e) => setSettleToUser(e.target.value)}
-                  className="w-full bg-brand-charcoal-dark border border-brand-charcoal-light focus:border-brand-orange text-white px-4 py-2 outline-none text-sm"
+                  className="w-full bg-brand-charcoal-dark border border-brand-charcoal-light focus:border-brand-orange text-gray-800 px-4 py-2 outline-none text-sm"
                 >
                   <option value="">-- Select member --</option>
                   {members
@@ -695,7 +695,7 @@ const GroupDetails = () => {
                   required
                   value={settleAmount}
                   onChange={(e) => setSettleAmount(e.target.value)}
-                  className="w-full bg-brand-charcoal-dark border border-brand-charcoal-light focus:border-brand-orange text-white px-4 py-2 outline-none text-sm"
+                  className="w-full bg-brand-charcoal-dark border border-brand-charcoal-light focus:border-brand-orange text-gray-800 px-4 py-2 outline-none text-sm"
                   placeholder="0.00"
                 />
               </div>

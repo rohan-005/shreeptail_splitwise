@@ -4,7 +4,7 @@ import Navbar from './Navbar';
 
 const Layout = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-brand-charcoal-dark text-white">
+    <div className="min-h-screen flex flex-col bg-brand-charcoal-dark text-gray-900">
       <Navbar />
 
       <div className="flex-1 flex flex-row">
@@ -17,7 +17,7 @@ const Layout = () => {
               `flex items-center space-x-3 px-4 py-3 text-sm font-bold uppercase tracking-wider transition-colors border ${
                 isActive
                   ? 'bg-brand-charcoal-dark border-brand-orange text-brand-orange'
-                  : 'border-transparent text-gray-400 hover:text-white hover:bg-brand-charcoal-dark/50'
+                  : 'border-transparent text-gray-500 hover:text-brand-orange hover:bg-gray-100'
               }`
             }
           >
@@ -30,7 +30,7 @@ const Layout = () => {
               `flex items-center space-x-3 px-4 py-3 text-sm font-bold uppercase tracking-wider transition-colors border ${
                 isActive
                   ? 'bg-brand-charcoal-dark border-brand-orange text-brand-orange'
-                  : 'border-transparent text-gray-400 hover:text-white hover:bg-brand-charcoal-dark/50'
+                  : 'border-transparent text-gray-500 hover:text-brand-orange hover:bg-gray-100'
               }`
             }
           >

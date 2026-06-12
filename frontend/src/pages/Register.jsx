@@ -57,7 +57,7 @@ const Register = () => {
               required
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="w-full bg-brand-charcoal-dark border border-brand-charcoal-light focus:border-brand-orange text-white px-4 py-3 outline-none transition-colors"
+              className="w-full bg-brand-charcoal-dark border border-brand-charcoal-light focus:border-brand-orange text-gray-800 px-4 py-3 outline-none transition-colors"
               placeholder="e.g. John Doe"
             />
           </div>
@@ -71,7 +71,7 @@ const Register = () => {
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full bg-brand-charcoal-dark border border-brand-charcoal-light focus:border-brand-orange text-white px-4 py-3 outline-none transition-colors"
+              className="w-full bg-brand-charcoal-dark border border-brand-charcoal-light focus:border-brand-orange text-gray-800 px-4 py-3 outline-none transition-colors"
               placeholder="e.g. john@example.com"
             />
           </div>
@@ -85,7 +85,7 @@ const Register = () => {
               required
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full bg-brand-charcoal-dark border border-brand-charcoal-light focus:border-brand-orange text-white px-4 py-3 outline-none transition-colors"
+              className="w-full bg-brand-charcoal-dark border border-brand-charcoal-light focus:border-brand-orange text-gray-800 px-4 py-3 outline-none transition-colors"
               placeholder="••••••••"
             />
           </div>

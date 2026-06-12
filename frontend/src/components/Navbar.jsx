@@ -20,7 +20,7 @@ const Navbar = () => {
               alt="Avatar"
               className="w-8 h-8 bg-brand-charcoal-dark border border-brand-charcoal-light p-0.5"
             />
-            <span className="text-sm font-semibold text-gray-200">{user.name}</span>
+            <span className="text-sm font-semibold text-gray-800">{user.name}</span>
           </div>
 
           <button

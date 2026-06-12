@@ -86,7 +86,7 @@ const Dashboard = () => {
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-center md:justify-between border-b border-brand-charcoal-light pb-6 gap-4">
         <div>
-          <h1 className="text-3xl font-black uppercase tracking-wider text-white">Dashboard</h1>
+          <h1 className="text-3xl font-black uppercase tracking-wider text-gray-900">Dashboard</h1>
           <p className="text-gray-400 text-sm mt-1">Overview of your shared balances and activity</p>
         </div>
         <div className="flex items-center space-x-4">
@@ -142,7 +142,7 @@ const Dashboard = () => {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
         {/* Joined Groups */}
         <div className="lg:col-span-7 space-y-4">
-          <h2 className="text-lg font-bold uppercase tracking-wider text-white border-b border-brand-charcoal-light pb-2">
+          <h2 className="text-lg font-bold uppercase tracking-wider text-gray-900 border-b border-brand-charcoal-light pb-2">
             Your Groups
           </h2>
 
@@ -160,7 +160,7 @@ const Dashboard = () => {
                 >
                   <div className="flex items-center justify-between">
                     <div>
-                      <span className="font-bold text-white text-base hover:text-brand-orange transition-colors">
+                      <span className="font-bold text-gray-900 text-base hover:text-brand-orange transition-colors">
                         {g.name}
                       </span>
                       <span className="ml-2 text-xs uppercase bg-brand-charcoal-light text-gray-400 px-2 py-0.5 font-semibold">
@@ -202,7 +202,7 @@ const Dashboard = () => {
 
         {/* Recent Expenses */}
         <div className="lg:col-span-5 space-y-4">
-          <h2 className="text-lg font-bold uppercase tracking-wider text-white border-b border-brand-charcoal-light pb-2">
+          <h2 className="text-lg font-bold uppercase tracking-wider text-gray-900 border-b border-brand-charcoal-light pb-2">
             Recent Activity
           </h2>
 
@@ -215,7 +215,7 @@ const Dashboard = () => {
               {recentExpenses.map((exp) => (
                 <div key={exp._id} className="p-4 flex flex-col space-y-1">
                   <div className="flex justify-between items-start">
-                    <span className="font-bold text-sm text-gray-200">{exp.description}</span>
+                    <span className="font-bold text-sm text-gray-800">{exp.description}</span>
                     <span className="text-sm font-black text-brand-orange">
                       ₹{exp.amount.toFixed(2)}
                     </span>
@@ -223,7 +223,7 @@ const Dashboard = () => {
 
                   <div className="flex justify-between items-center text-xs text-gray-400">
                     <span>
-                      Paid by <strong className="text-gray-300">{exp.paidBy.name}</strong> in{' '}
+                      Paid by <strong className="text-gray-700">{exp.paidBy.name}</strong> in{' '}
                       <Link
                         to={`/groups/${exp.groupId._id}`}
                         className="underline hover:text-brand-orange"
@@ -244,7 +244,7 @@ const Dashboard = () => {
       {showCreateModal && (
         <div className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center p-4">
           <div className="bg-brand-charcoal-medium border border-brand-charcoal-light p-6 w-full max-w-md">
-            <h3 className="text-lg font-black uppercase tracking-wider text-white mb-4 border-b border-brand-charcoal-light pb-2">
+            <h3 className="text-lg font-black uppercase tracking-wider text-gray-900 mb-4 border-b border-brand-charcoal-light pb-2">
               Create a Group
             </h3>
 
@@ -264,7 +264,7 @@ const Dashboard = () => {
                   required
                   value={groupName}
                   onChange={(e) => setGroupName(e.target.value)}
-                  className="w-full bg-brand-charcoal-dark border border-brand-charcoal-light focus:border-brand-orange text-white px-4 py-2 outline-none"
+                  className="w-full bg-brand-charcoal-dark border border-brand-charcoal-light focus:border-brand-orange text-gray-800 px-4 py-2 outline-none"
                   placeholder="e.g. Goa Trip"
                 />
               </div>
@@ -276,7 +276,7 @@ const Dashboard = () => {
                 <select
                   value={groupCategory}
                   onChange={(e) => setGroupCategory(e.target.value)}
-                  className="w-full bg-brand-charcoal-dark border border-brand-charcoal-light focus:border-brand-orange text-white px-4 py-2 outline-none"
+                  className="w-full bg-brand-charcoal-dark border border-brand-charcoal-light focus:border-brand-orange text-gray-800 px-4 py-2 outline-none"
                 >
                   <option value="home">Home / Apartment</option>
                   <option value="trip">Trip / Vacation</option>

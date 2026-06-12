@@ -142,7 +142,7 @@ const ExpenseDetailsDrawer = ({ expenseId, groupId, members, onClose, onExpenseD
     return (
       <div className="fixed inset-y-0 right-0 z-40 w-full max-w-lg bg-brand-charcoal-medium border-l border-brand-charcoal-light p-6 shadow-2xl">
         <div className="flex justify-between items-center mb-6">
-          <h3 className="font-bold text-white text-lg">Error</h3>
+          <h3 className="font-bold text-gray-900 text-lg">Error</h3>
           <button onClick={onClose} className="text-gray-400 hover:text-white uppercase font-bold text-xs">Close</button>
         </div>
         <div className="bg-brand-red/10 border border-brand-red text-brand-red p-3 text-sm">{error || 'Expense not found'}</div>
@@ -163,7 +163,7 @@ const ExpenseDetailsDrawer = ({ expenseId, groupId, members, onClose, onExpenseD
           <span className="text-xs uppercase bg-brand-charcoal-dark border border-brand-charcoal-light text-gray-400 px-2 py-0.5 font-bold">
             Expense Detail
           </span>
-          <h3 className="font-black text-xl text-white uppercase tracking-wide mt-1.5">{expense.description}</h3>
+          <h3 className="font-black text-xl text-gray-900 uppercase tracking-wide mt-1.5">{expense.description}</h3>
         </div>
         <button
           onClick={onClose}
@@ -183,7 +183,7 @@ const ExpenseDetailsDrawer = ({ expenseId, groupId, members, onClose, onExpenseD
           </div>
           <div className="text-right">
             <p className="text-xs text-gray-400">Paid by</p>
-            <p className="text-sm font-bold text-gray-200">{expense.paidBy?.name}</p>
+            <p className="text-sm font-bold text-gray-800">{expense.paidBy?.name}</p>
           </div>
         </div>
 
@@ -195,8 +195,8 @@ const ExpenseDetailsDrawer = ({ expenseId, groupId, members, onClose, onExpenseD
           <div className="divide-y divide-brand-charcoal-light border border-brand-charcoal-light bg-brand-charcoal-dark">
             {expense.splits.map((s, index) => (
               <div key={index} className="p-3 flex justify-between items-center text-xs">
-                <span className="text-gray-300 font-semibold">{s.user?.name}</span>
-                <span className="font-bold text-gray-200">₹{s.amount.toFixed(2)}</span>
+                <span className="text-gray-750 font-semibold">{s.user?.name}</span>
+                <span className="font-bold text-gray-800">₹{s.amount.toFixed(2)}</span>
               </div>
             ))}
           </div>
@@ -231,7 +231,7 @@ const ExpenseDetailsDrawer = ({ expenseId, groupId, members, onClose, onExpenseD
                     <strong className="text-brand-orange">{c.userId?.name}</strong>
                     <span>{new Date(c.createdAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
                   </div>
-                  <p className="text-gray-200 bg-brand-charcoal-medium p-2.5 border-l-2 border-brand-orange">{c.message}</p>
+                  <p className="text-gray-800 bg-brand-charcoal-medium p-2.5 border-l-2 border-brand-orange">{c.message}</p>
                 </div>
               ))
             )}
@@ -253,7 +253,7 @@ const ExpenseDetailsDrawer = ({ expenseId, groupId, members, onClose, onExpenseD
               required
               value={newComment}
               onChange={handleCommentChange}
-              className="flex-1 bg-brand-charcoal-dark border border-brand-charcoal-light focus:border-brand-orange text-white text-xs px-3 py-2.5 outline-none"
+              className="flex-1 bg-brand-charcoal-dark border border-brand-charcoal-light focus:border-brand-orange text-gray-800 text-xs px-3 py-2.5 outline-none"
               placeholder="Write a comment..."
             />
             <button

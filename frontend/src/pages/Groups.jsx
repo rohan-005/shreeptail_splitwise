@@ -85,7 +85,7 @@ const Groups = () => {
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-center md:justify-between border-b border-brand-charcoal-light pb-6 gap-4">
         <div>
-          <h1 className="text-3xl font-black uppercase tracking-wider text-white">Groups</h1>
+          <h1 className="text-3xl font-black uppercase tracking-wider text-gray-900">Groups</h1>
           <p className="text-gray-400 text-sm mt-1">Manage and filter your shared expense groups</p>
         </div>
         <button
@@ -105,7 +105,7 @@ const Groups = () => {
             className={`px-4 py-2 text-xs uppercase font-bold tracking-wider border transition-colors cursor-pointer ${
               filter === cat
                 ? 'bg-brand-orange border-brand-orange text-white'
-                : 'bg-brand-charcoal-medium border-brand-charcoal-light text-gray-400 hover:text-white'
+                : 'bg-brand-charcoal-medium border-brand-charcoal-light text-gray-500 hover:text-brand-orange'
             }`}
           >
             {cat}
@@ -127,7 +127,7 @@ const Groups = () => {
             >
               <div>
                 <div className="flex justify-between items-start mb-2">
-                  <h3 className="font-bold text-lg text-white line-clamp-1">{g.name}</h3>
+                  <h3 className="font-bold text-lg text-gray-900 line-clamp-1">{g.name}</h3>
                   <span className="text-xs uppercase bg-brand-charcoal-light text-gray-400 px-2 py-0.5 font-bold">
                     {g.category}
                   </span>
@@ -157,7 +157,7 @@ const Groups = () => {
       {showCreateModal && (
         <div className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center p-4">
           <div className="bg-brand-charcoal-medium border border-brand-charcoal-light p-6 w-full max-w-md">
-            <h3 className="text-lg font-black uppercase tracking-wider text-white mb-4 border-b border-brand-charcoal-light pb-2">
+            <h3 className="text-lg font-black uppercase tracking-wider text-gray-900 mb-4 border-b border-brand-charcoal-light pb-2">
               Create a Group
             </h3>
 
@@ -177,7 +177,7 @@ const Groups = () => {
                   required
                   value={groupName}
                   onChange={(e) => setGroupName(e.target.value)}
-                  className="w-full bg-brand-charcoal-dark border border-brand-charcoal-light focus:border-brand-orange text-white px-4 py-2 outline-none"
+                  className="w-full bg-brand-charcoal-dark border border-brand-charcoal-light focus:border-brand-orange text-gray-800 px-4 py-2 outline-none"
                   placeholder="e.g. Vacation 2026"
                 />
               </div>
@@ -189,7 +189,7 @@ const Groups = () => {
                 <select
                   value={groupCategory}
                   onChange={(e) => setGroupCategory(e.target.value)}
-                  className="w-full bg-brand-charcoal-dark border border-brand-charcoal-light focus:border-brand-orange text-white px-4 py-2 outline-none"
+                  className="w-full bg-brand-charcoal-dark border border-brand-charcoal-light focus:border-brand-orange text-gray-800 px-4 py-2 outline-none"
                 >
                   <option value="home">Home / Apartment</option>
                   <option value="trip">Trip / Vacation</option>

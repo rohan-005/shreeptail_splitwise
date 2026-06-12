@@ -26,6 +26,11 @@ const Login = () => {
     }
   };
 
+  const handleQuickLogin = (emailVal) => {
+    setEmail(emailVal);
+    setPassword('password123');
+  };
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-brand-charcoal-dark px-4">
       <div className="w-full max-w-md bg-brand-charcoal-medium border border-brand-charcoal-light p-8">
@@ -34,6 +39,36 @@ const Login = () => {
             Splitwise
           </span>
           <p className="text-gray-400 text-sm mt-2">Login to your account</p>
+        </div>
+
+        {/* Quick Login Section */}
+        <div className="mb-6 p-4 border border-brand-charcoal-light bg-brand-charcoal-dark">
+          <p className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2 text-center">
+            Quick Login (Demo Accounts)
+          </p>
+          <div className="grid grid-cols-3 gap-2">
+            <button
+              type="button"
+              onClick={() => handleQuickLogin('alice@example.com')}
+              className="bg-brand-charcoal-medium hover:bg-brand-orange hover:text-white border border-brand-charcoal-light text-xs font-bold py-1.5 uppercase transition-colors cursor-pointer text-gray-800"
+            >
+              Alice
+            </button>
+            <button
+              type="button"
+              onClick={() => handleQuickLogin('bob@example.com')}
+              className="bg-brand-charcoal-medium hover:bg-brand-orange hover:text-white border border-brand-charcoal-light text-xs font-bold py-1.5 uppercase transition-colors cursor-pointer text-gray-800"
+            >
+              Bob
+            </button>
+            <button
+              type="button"
+              onClick={() => handleQuickLogin('charlie@example.com')}
+              className="bg-brand-charcoal-medium hover:bg-brand-orange hover:text-white border border-brand-charcoal-light text-xs font-bold py-1.5 uppercase transition-colors cursor-pointer text-gray-800"
+            >
+              Charlie
+            </button>
+          </div>
         </div>
 
         {error && (
@@ -52,7 +87,7 @@ const Login = () => {
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full bg-brand-charcoal-dark border border-brand-charcoal-light focus:border-brand-orange text-white px-4 py-3 outline-none transition-colors"
+              className="w-full bg-brand-charcoal-dark border border-brand-charcoal-light focus:border-brand-orange text-gray-800 px-4 py-3 outline-none transition-colors"
               placeholder="e.g. user@example.com"
             />
           </div>
@@ -66,7 +101,7 @@ const Login = () => {
               required
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full bg-brand-charcoal-dark border border-brand-charcoal-light focus:border-brand-orange text-white px-4 py-3 outline-none transition-colors"
+              className="w-full bg-brand-charcoal-dark border border-brand-charcoal-light focus:border-brand-orange text-gray-800 px-4 py-3 outline-none transition-colors"
               placeholder="••••••••"
             />
           </div>
