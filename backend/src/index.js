@@ -56,4 +56,18 @@ app.use(errorHandler);
 const PORT = process.env.PORT || 5000;
 server.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
+
+  // Self-ping to prevent Render free-tier sleep
+  const selfPingUrl = process.env.BACKEND_URL || process.env.RENDER_EXTERNAL_URL;
+  if (selfPingUrl) {
+    console.log(`Self-ping active targeting: ${selfPingUrl}`);
+    setInterval(async () => {
+      try {
+        const res = await fetch(`${selfPingUrl}/health`);
+        console.log(`Self-ping status: ${res.status}`);
+      } catch (err) {
+        console.error('Self-ping failed:', err.message);
+      }
+    }, 10 * 60 * 1000); // Ping every 10 minutes
+  }
 });
