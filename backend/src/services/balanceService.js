@@ -197,9 +197,9 @@ export const calculateUserDashboardBalances = async (userId) => {
 
     groupSummaries.push({
       groupId,
-      groupName: groupMemberInfo.groupId.name,
+      name: groupMemberInfo.groupId.name,
       category: groupMemberInfo.groupId.category,
-      userNetBalance: netBalance,
+      netBalance,
     });
   }
 

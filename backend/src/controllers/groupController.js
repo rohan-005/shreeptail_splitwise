@@ -91,7 +91,7 @@ export const getGroupById = async (req, res, next) => {
       .lean();
     
     const members = membersList.map((m) => ({
-      ...m.userId,
+      userId: m.userId,
       role: m.role,
       joinedAt: m.joinedAt,
     }));
