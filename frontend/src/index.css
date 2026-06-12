@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-orange: #FF7A1A;
+  --color-brand-charcoal-dark: #0D0D0D;
+  --color-brand-charcoal-medium: #1F1F1F;
+  --color-brand-charcoal-light: #2A2A2A;
+  --color-brand-red: #D9534F;
+}
+
+/* Global resets for flat, sharp-cornered professional look */
+* {
+  border-radius: 0px !important;
+}
+
+body {
+  background-color: var(--color-brand-charcoal-dark);
+  color: #F3F4F6;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Custom scrollbars for flat theme */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1F1F1F;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FF7A1A;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e66b15;
+}
